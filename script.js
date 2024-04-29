@@ -85,7 +85,6 @@ const items = [
   },
 ];
 
-
 let currentState = [...items];
 
 
@@ -100,12 +99,18 @@ const objImg = document.querySelector(`#shop-items`);
 
 
 function createNewProduct(newProduct) {
+const { title, description, img, price, tags } = newProduct;
+const product = itemTemplate.content.cloneNode(true);
 const tagsHolder = product.querySelector(".tags");
 tags.forEach((tag) => {
 const element = document.createElement("span");
 element.textContent = tag;
 element.classList.add("tag");
 tagsHolder.append(element);
+product.querySelector("p").textContent = description;
+product.querySelector("img").src = img;
+product.querySelector(".price").textContent = `${price}P`;
+
 });
   return product;
 }
