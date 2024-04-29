@@ -114,7 +114,6 @@ product.querySelector(".price").textContent = `${price}P`;
 });
   return product;
 }
-
 function renderItems(arr) {
   arr.forEach((product) => {
     itemsContainer.append(createNewProduct(product));
